@@ -10,4 +10,4 @@ Express &amp; MongoDB backend for NYSee application
 2. ` cd NYSeeBackend `
 3. ` npm install ` (assuming you have node & npm installed)
 4. ` npm start `
-5. ` http://127.0.0.1:3000/v1/stations.json `
+5. ` http://127.0.0.1:3000/api/stations.json `
