@@ -20,10 +20,9 @@ app.use(bodyParser.json());
 app.use('/v1', router);
 
 var PORT = process.env.PORT || 3000;
-var HOST = process.env.HOST || '127.0.0.1';
 
-console.log('Listening on', HOST, PORT);
-app.listen(PORT, HOST);
+console.log('Listening on', PORT);
+app.listen(PORT);
 
 
 // // Logger that outputs all requests into the console

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
     "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js",
@@ -24,5 +25,8 @@
     "moment": "^2.19.1",
     "mongoose": "^4.10.8",
     "morgan": "^1.9.0"
+  },
+  "engines": {
+    "node": "8.5.0"
   }
 }
