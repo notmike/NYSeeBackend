@@ -1,5 +1,5 @@
 // Import index action from station controller
-const StationsController = require('./controllers/stations');
+const StationsController = require('../controllers/stations');
 
 var router = require('express').Router();
 

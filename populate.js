@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var Station = require('./models/station');
+var Station = require('./src/models/station');
 
 const stations = [
   {

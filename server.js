@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const router = require('./router');
+const router = require('./src/routes/router');
 
 
 // Initialize http server
