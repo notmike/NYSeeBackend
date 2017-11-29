@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // Define station schema
 var stationSchema = new Schema({
@@ -12,4 +13,4 @@ var stationSchema = new Schema({
 });
 
 // Export Mongoose model
-export default mongoose.model('station', stationSchema);
+module.exports = mongoose.model('station', stationSchema);

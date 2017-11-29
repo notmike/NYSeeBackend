@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Station from './models/station';
+const mongoose = require('mongoose');
+var Station = require('./models/station');
 
 const stations = [
   {
