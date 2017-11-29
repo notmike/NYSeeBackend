@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const router = require('./src/routes/router');
-
+import routes from './src/routes/pathRoutes';
 
 // Initialize http server
 const app = express();
@@ -15,7 +15,10 @@ if (process.env.NODE_ENV == 'production') {
   mongoose.connect('mongodb://localhost/stations');
 }
 
+routes(app); // <<---- pathRoutes TEST
+
 app.use(morgan('combined'));
+app.use(bodyParser.urlencoded({ extended: true }));  // <--- added for testing
 app.use(bodyParser.json());
 app.use('/v1', router);
 
