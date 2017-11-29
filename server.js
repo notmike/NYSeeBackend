@@ -4,14 +4,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const router = require('./router');
 
-var mongodb = require("mongodb");
-
 
 // Initialize http server
 const app = express();
 
 if (process.env.NODE_ENV == 'production') {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGO_URL);
 } else {
   // // Connect to MongoDB
   mongoose.connect('mongodb://localhost/stations');
@@ -38,4 +36,4 @@ app.listen(PORT);
 // });
 
 // 1) npm start
-// 2) localhost:5000/v1/stations.json
+// 2) localhost:3000/v1/stations.json
