@@ -3,11 +3,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 export const PathSchema = new Schema({
-    stationName: {
+    _id: {
         type: String,
-        required: 'Must have a station name'
+        required: 'Must have a PathId'
     },
-    path: {
+    directions: {
         type: String,
         required: 'Must have a path'
     },

@@ -15,3 +15,21 @@ export const addNewPath = (req, res) => {
     });
 };
 
+export const getPath = (req, res) => {
+    Path.find({}, (err, path) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(path);
+    });
+};
+
+export const getPathWithID = (req, res) => {
+    Path.findById(req.params.pathId, (err, path) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(path.directions);
+    })
+};
+

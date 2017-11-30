@@ -1,4 +1,4 @@
-import { addNewPath } from '../controllers/pathController';
+import { addNewPath, getPath, getPathWithID } from '../controllers/pathController';
 
 const routes = (app) => {
     app.route('/path')
@@ -7,17 +7,19 @@ const routes = (app) => {
         console.log(`Request from: ${req.originalUrl}`)
         console.log(`Request type: ${req.method}`)
         next();
-    },  (req, res, next) => {
-        res.send('GET request was successful!');
-    })
+    }, getPath)
 
     // POST endpoint
     .post(addNewPath);
 
     app.route('/path/:pathId')
+    // get specific path
+    .get(getPathWithID)
+    // put request
     .put((req, res) =>
     res.send('PUT request successful!'))
 
+    // delete request
     .delete((req, res) =>
     res.send('DELETE request was successful!'));
 }
