@@ -12,15 +12,17 @@ if (process.env.NODE_ENV == 'production') {
   mongoose.connect(process.env.MONGO_URL);
 } else {
   // // Connect to MongoDB
-  mongoose.connect('mongodb://localhost/stations');
+  mongoose.connect('mongodb://localhost/stations', {
+    useMongoClient: true
+  });
 }
 
-routes(app); // <<---- pathRoutes TEST
 
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));  // <--- added for testing
 app.use(bodyParser.json());
-app.use('/v1', router);
+routes(app); // <<---- pathRoutes TEST
+// app.use('/v1', router);
 
 var PORT = process.env.PORT || 3000;
 

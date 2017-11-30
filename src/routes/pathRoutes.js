@@ -11,6 +11,7 @@ const routes = (app) => {
         res.send('GET request was successful!');
     })
 
+    // POST endpoint
     .post(addNewPath);
 
     app.route('/path/:pathId')
