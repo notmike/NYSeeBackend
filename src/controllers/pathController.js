@@ -29,7 +29,7 @@ export const getPathWithID = (req, res) => {
         if (err) {
             res.send(err);
         }
-        res.json(path.directions);
+        res.json(path.pathArray[0]);
     })
 };
 
