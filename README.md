@@ -12,3 +12,10 @@ Express &amp; MongoDB backend for NYSee application
 4. ` npm install `
 5. ` npm start -- --reset-cache`
 6. ` http://127.0.0.1:3000/PATHdb`
+
+## Making REST Calls to Backend
+Use Postman, select 'PUT' and use the URL `http://localhost:3000/path/NE145StEdgeCombAveDUptown` for example,
+then in the parameters body section, click the radio option `x-www-form-urlencoded` and type `path` for a "Key",
+and for "Value" type a realistic path like `D23L14S10D40R2`, and then send it.
+
+If you receive no error or output then it probably worked, use Robo3T or similar to verify it was added in the correct pathArray.
