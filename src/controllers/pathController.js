@@ -35,15 +35,6 @@ export const getPathWithID = (req, res) => {
     })
 };
 
-// export const updatePath = (req, res) => {
-//     Path.findOneAndUpdate({ _id: req.params.pathId}, req.body, { new: true }, (err, path) => {
-//         if (err) {
-//             res.send(err);
-//         }
-//         res.json(path);
-//     })
-// };
-
 export const updatePath = (req, res) => {
     Path.findByIdAndUpdate(
         req.params.pathId,
