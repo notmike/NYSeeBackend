@@ -1,4 +1,4 @@
-import { addNewPath, getPath, getPathWithID } from '../controllers/pathController';
+import { addNewPath, getPath, getPathWithID, updatePath } from '../controllers/pathController';
 
 const routes = (app) => {
     app.route('/path')
@@ -16,8 +16,7 @@ const routes = (app) => {
     // get specific path
     .get(getPathWithID)
     // put request
-    .put((req, res) =>
-    res.send('PUT request successful!'))
+    .put(updatePath)
 
     // delete request
     .delete((req, res) =>
