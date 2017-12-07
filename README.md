@@ -18,4 +18,4 @@ Use Postman, select 'PUT' and use the URL `http://localhost:3000/path/NE145StEdg
 then in the parameters body section, click the radio option `x-www-form-urlencoded` and type `path` for a "Key",
 and for "Value" type a realistic path like `D23L14S10D40R2`, and then send it.
 
-If you receive no error or output then it probably worked, use Robo3T or similar to verify it was added in the correct pathArray.
+Use Robo3T or similar to verify it was added in the correct pathArray.

@@ -46,8 +46,11 @@ export const updatePath = (req, res) => {
         req.params.pathId,
         {$push: {"pathArray": {path: req.body.path}}},
         {safe: true, upsert: true, new : true},
-        function(err, model) {
-            res.send(err);
-        }
-    );
+        (err, path) => {
+            if (err) {
+                res.send(err);
+            }
+            // returns array of paths for specified PathId
+            res.json(path.pathArray);
+    })
 };
