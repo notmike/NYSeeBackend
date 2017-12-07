@@ -10,21 +10,26 @@ const routes = (app) => {
     // POST endpoint
     .post(addNewPath);
 
-
-    app.route('/path/:pathId')
+    // ********** USER REQUESTS NAVIGATION **********
     // get specific path
-    .get(getPathWithID)
+    app.route('/path/:pathId')
+    .get((req, res, next) => {
+        // MIDDLEWARE GOES HERE
+        console.log(`${req.method} request from: ${req.originalUrl}`)
+        next();
+    }, getPathWithID)
 
+    // ********** USER SUBMITS PATH **********
     // put request
     .put((req, res, next) => {
-        // middleware
+        // MIDDLEWARE GOES HERE
         console.log(`${req.method} request from: ${req.originalUrl}`)
         next();
     }, updatePath)
 
-    // delete request
+    // delete request (WON'T USE)
     .delete((req, res) =>
-    res.send('DELETE request was successful!'));
+    res.send('DELETE request is forbidden!'));
 }
 
 export default routes
