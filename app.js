@@ -22,8 +22,8 @@ if (process.env.NODE_ENV == 'production') {
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));  // <--- added for testing
 app.use(bodyParser.json());
-
-routes(app); // <<---- pathRoutes TEST
+// initialize routes
+routes(app);
 
 app.get('/', (req, res) =>
     res.send(`Node and express server is running on port ${PORT}`)

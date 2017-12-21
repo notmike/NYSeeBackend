@@ -27,11 +27,13 @@ export const getPathWithID = (req, res) => {
     Path.findById(
         req.params.pathId,
         (err, path) => {
-            if (err) {
-                res.send(err);
-            }
+            if (err || !null) {
+                console.log("ERROR:\t" + err);
+                res.status(422).send(err);
+            } else {
             // right now just returns the 1st path
             res.json(path.pathArray[0].path);
+            }
     })
 };
 

@@ -14,6 +14,7 @@ const routes = (app) => {
     // get specific path
     app.route('/path/:pathId')
     .get((req, res, next) => {
+
         // MIDDLEWARE GOES HERE
         console.log(`${req.method} request from: ${req.originalUrl}`)
         next();
