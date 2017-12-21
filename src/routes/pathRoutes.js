@@ -23,8 +23,16 @@ const routes = (app) => {
     // ********** USER SUBMITS PATH **********
     // put request
     .put((req, res, next) => {
+
         // MIDDLEWARE GOES HERE
+        console.log("test 1" , req.body.path);
         console.log(`${req.method} request from: ${req.originalUrl}`)
+        // Adjust Steps from running total, to num of steps per segment
+        for (var i = 0, len = req.body.path.length, count = 0; i < len; i++ ) {
+            req.body.path[i].steps -= count;
+            count += req.body.path[i].steps;
+        }
+        console.log("test2:", req.body.path);
         next();
     }, updatePath)
 
