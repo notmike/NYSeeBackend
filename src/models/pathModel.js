@@ -10,6 +10,10 @@ export const PathSchema = new Schema({
             type: Number,
             default: 0
         },
+        totalSteps: {
+            type: Number,
+            default: 0
+        },
         submitted_date: {
             type: Date,
             default: Date.now

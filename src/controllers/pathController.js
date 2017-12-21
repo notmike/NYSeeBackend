@@ -31,8 +31,12 @@ export const getPathWithID = (req, res) => {
                 console.log("ERROR:\t" + err);
                 res.status(422).send(err);
             } else {
-            // right now just returns the 1st path
-            res.json(path.pathArray[0].path);
+                // right now just returns the 1st path
+                // path.pathArray.sort('totalSteps').exec(function(err, docs) {
+                //     var min = doc.path;
+                // });
+                // res.json(min);
+                res.json(path.pathArray[0].path);
             }
     })
 };
@@ -40,7 +44,7 @@ export const getPathWithID = (req, res) => {
 export const updatePath = (req, res) => {
     Path.findByIdAndUpdate(
         req.params.pathId,
-        {$push: {"pathArray": {path: req.body.path}}},
+        {$push: {"pathArray": {path: req.body.path , totalSteps: req.body.totalSteps} }},
         {safe: true, upsert: true, new : true},
         (err, path) => {
             if (err) {
