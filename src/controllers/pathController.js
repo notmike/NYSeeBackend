@@ -31,7 +31,7 @@ export const getPathWithID = (req, res) => {
                 res.send(err);
             }
             // right now just returns the 1st path
-            res.json(path.pathArray[0]);
+            res.json(path.pathArray[0].path);
     })
 };
 
