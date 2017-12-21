@@ -27,7 +27,7 @@ export const getPathWithID = (req, res) => {
     Path.findById(
         req.params.pathId,
         (err, path) => {
-            if (err || !null) {
+            if (err || path == null) {
                 console.log("ERROR:\t" + err);
                 res.status(422).send(err);
             } else {
