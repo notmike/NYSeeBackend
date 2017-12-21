@@ -6,7 +6,7 @@ import routes from './src/routes/pathRoutes';
 
 // Initialize http server
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 
 // Mongoose connection
 if (process.env.NODE_ENV == 'production') {
